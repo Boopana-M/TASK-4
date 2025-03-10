@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background: #121212;
+            color: #ffffff;
+            text-align: center;
+            transition: background 0.3s, color 0.3s;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #1f1f1f;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+        section {
+            padding: 50px;
+            border-bottom: 2px solid #333;
+        }
+        .project-card {
+            background: #1f1f1f;
+            margin: 20px auto;
+            padding: 20px;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+        }
+        .project-description {
+            display: none;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #ddd;
+        }
+        .dark-mode {
+            background: #ffffff;
+            color: #121212;
+        }
+        .dark-mode header {
+            background: #eeeeee;
+        }
+        .dark-mode .project-card {
+            background: #f4f4f4;
+            color: #121212;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .dark-mode .project-description {
+            color: #444;
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+        button {
+            padding: 10px 20px;
+            margin: 20px;
+            border: none;
+            cursor: pointer;
+            background: #ffcc00;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Boopana's Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <button onclick="toggleDarkMode()">Toggle Dark/Light Mode</button>
+    
+    <section id="home">
+        <h2>About Me</h2>
+        <img src="D:\ORINSON INTERNSHIP\my photo.jpeg"alt="My Photo" class="profile-pic"><br><br>
+        <p>Hi, I’m a passionate Computer and Communication Engineering student with a strong interest in full-stack development and AI. I love building creative and impactful projects that solve real-world problems.<br>
+            I’m always eager to learn new technologies, participate in hackathons, and contribute to meaningful projects.
+        </p>
+    </section>
+    
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-card" onclick="toggleDescription(0)"><strong>Zero Hunger Project</strong>
+            <p class="project-description">Food tracking system for helping those in need of food.</p>
+        </div>
+        <div class="project-card" onclick="toggleDescription(1)"><strong>Learn in Silence</strong>
+            <p class="project-description">E-learning platform for empowering deaf and mute students in their regional language.</p>
+        </div>
+        <div class="project-card" onclick="toggleDescription(2)"><strong>Invoice Generator</strong>
+            <p class="project-description">Web tool that automates invoice creation for businesses, with auto-calculation and PDF generation.</p>
+        </div>
+        <div class="project-card" onclick="toggleDescription(3)"><strong>Weather Dashboard</strong>
+            <p class="project-description">Interactive UI to display weather updates, temperature, and climate changes.</p>
+        </div>
+        <div class="project-card" onclick="toggleDescription(4)"><strong>Recipe Book</strong>
+            <p class="project-description">Digital platform for storing, browsing, and managing recipes with step-by-step instructions.</p>
+        </div>
+    </section>
+    
+    <section id="skills">
+        <h2>Skills</h2>
+        <h4><ol>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JAVASCRIPT</li>
+            <li>C Program</li>
+            <li>C++</li>
+            <li>OOPS</li>
+            <li>Python</li>
+        </ol> </h4>
+    </section>
+    
+    <section id="achievements">
+        <h2>Achievements</h2>
+        <ul>
+            <li>🏆 1st Place in Createathon</li>
+            <li>🏆 Solved 650+ Problems in C Programming</li>
+            <li>🎯 Hackathon Participation</li>
+        </ul>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: boopana608@gmail.com</p>
+        <p>LinkedIn: <a href="www.linkedin.com/in/boopana-m-942520328">Boopana M</a></p>
+        <p>GitHub: <a href="https://github.com/Boopana-M/ORINSON-INTERNSHIP-TASK-.git">Boopana-M</a></p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+
+        function toggleDescription(index) {
+            const descriptions = document.querySelectorAll(".project-description");
+            descriptions[index].style.display = descriptions[index].style.display === "block" ? "none" : "block";
+        }
+    </script>
+</body>
+</html>
